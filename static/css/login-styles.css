@@ -10,15 +10,13 @@ body {
 }
 
 .container {
-    max-width: 350px;
+    max-width: 400px;
     margin: 50px auto;
-    background-color: #f9f9f9; /* White */
-    border: 1px solid #ccc; /* Light grey */
-    border-radius: 5px;
     padding: 20px;
-    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
-
 /* Header styles */
 header {
     background-color: #333; /* Blue */
@@ -26,6 +24,7 @@ header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
 }
+
 
 .header-container {
     max-width: 960px;
@@ -74,34 +73,49 @@ nav ul li a:hover {
     color: #fd7e14; /* Orange */
 }
 
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
 /* Form styles */
 .container input[type="email"],
 .container input[type="password"] {
-    width: calc(100% - 40px);
+    width: 100%;
     padding: 10px;
     margin: 10px auto;
-    border: 1px solid #ccc; /* Light grey */
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
     border-radius: 5px;
+    box-sizing: border-box;
+    color: #333;
     background-color: #f0f0f0; /* Light grey */
-    color: #333; /* Dark grey */
 }
 
 button[type="submit"] {
-    width: calc(100% - 40px);
+    width: 100%;
     padding: 10px;
-    margin: 10px auto;
-    background-color: #f0a500; /* Blue */
+    margin: 10px 0;
+    background-color: #f0a500;
+    color: #fff;
     border: none;
     border-radius: 5px;
-    color: #fff; /* White */
-    font-weight: bold;
     cursor: pointer;
 }
 
 button[type="submit"]:hover {
     background-color: #d17d00; /* Slightly darker blue */
 }
-
+.container p {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: center;
+}
 .divider {
     display: flex;
     align-items: center;

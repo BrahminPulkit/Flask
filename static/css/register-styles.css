@@ -8,13 +8,17 @@ body {
 }
 
 .container {
-    max-width: 350px;
+    max-width: 400px;
     margin: 50px auto;
-    background-color: #fff; /* White */
-    border: 1px solid #ccc; /* Light grey */
-    border-radius: 5px;
     padding: 20px;
-    text-align: center;
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
 }
 
 /* Header styles */
@@ -34,9 +38,20 @@ header {
     align-items: center;
 }
 
+
+
 .header-container h1 {
     margin: 0;
     font-size: 24px;
+}
+.form-group{
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
 }
 
 /* Form styles */
@@ -52,27 +67,28 @@ header {
     color: #333; /* Dark grey */
 }
 
-input[type="submit"] {
-    width: calc(100% - 40px);
+button[type="submit"] {
+    width: 100%;
     padding: 10px;
-    margin: 10px auto;
-    background-color: #f0a500; /* Blue */
+    margin: 10px 0;
+    background-color: #f0a500;
+    color: #fff;
     border: none;
     border-radius: 5px;
-    color: #fff; /* White */
-    font-weight: bold;
     cursor: pointer;
 }
 
-input[type="submit"]:hover {
+button[type="submit"]:hover {
     background-color: #d17d00; /* Slightly darker blue */
 }
 
 /* Footer styles */
 .container p {
+    text-align: center;
     margin-top: 20px;
     font-size: 14px;
 }
+
 
 .container a {
     color: #405de6; /* Blue */
