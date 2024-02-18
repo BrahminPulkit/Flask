@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web Application Overview</title>
+    <link rel="stylesheet" href="static/css/about.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="card bg-purple">
+            <div class="card_info">
+                <h2>Import Statements</h2>
+            </div>
+            <div class="card_text">
+                <p>The code imports necessary modules including Flask, render_template, request, redirect, session, a custom
+                    module named db for database operations, and api for some API operations.</p>
+            </div>
+        </div>
+
+        <div class="card bg-purple">
+            <div class="card_info">
+                <h2>App Initialization</h2>
+            </div>
+            <div class="card_text">
+                <p>An instance of the Flask class is created and assigned to the variable app. Additionally, a secret key is set
+                    for the Flask application. The secret key is used for securely signing session cookies.</p>
+            </div>
+        </div>
+
+        <div class="card bg-purple">
+            <div class="card_info">
+                <h2>Database Initialization</h2>
+            </div>
+
+            <div class="card_text">
+                <p>An instance of the Database class (presumably handling database operations) is created and assigned to dbo.
+                </p>
+            </div>
+
+        </div>
+
+        <div class="card bg-purple">
+
+            <div class="card_info">
+                <h2>"Database-initialization-section"</h2>
+            </div>
+            <div class="card_text">
+                <p>An instance of the Database class (presumably handling database operations) is created and assigned to dbo.
+                </p>
+            </div>
+        </div>
+
+        <div class="card bg-purple">
+            <div class="card_info">
+                <h2>Route Definitions</h2>
+            </div>
+            <div class="card_text">
+                <ul>
+                    <li><code>@app.route('/'):</code> Renders the login page.</li>
+                    <li><code>@app.route('/register'):</code> Renders the registration page.</li>
+                    <li><code>@app.route('/forgot_password'):</code> Renders the forgot password page.</li>
+                    <li><code>@app.route('/reset_password', methods=['POST']):</code> Handles the password reset
+                        functionality...</li>
+                    <li><code>@app.route('/perform_registration', methods=['POST']):</code> Handles the user registration
+                        process...</li>
+                    <li><code>@app.route('/perform_login', methods=['POST']):</code> Handles user login...</li>
+                    <li><code>@app.route('/profile'):</code> Renders the profile page if the user is logged in...</li>
+                    <li><code>@app.route('/ner'):</code> Renders a page for named entity recognition (NER) if the user is logged
+                        in...</li>
+                    <li><code>@app.route('/perform_ner', methods=['POST']):</code> Handles the NER functionality...</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="card bg-purple">
+
+            <div class="card_info">
+                <h1>Project Overview:</h1>
+            </div>
+            <div class="card_text">
+                <p>This Flask web application is designed to provide user authentication functionalities such as user registration,
+                    login, password reset, and user profile management. Additionally, it includes a feature for Named Entity
+                    Recognition (NER) where users can input text, and the application identifies and extracts named entities (such
+                    as people's names, organizations, locations, etc.) from the text.</p>
+            </div>
+        </div>
+        
+        <div class="card bg-purple">
+            <div class="card_info">
+                <h2>Named Entity Recognition (NER)</h2>
+            </div>
+
+            <div class="card_text">
+                <p>Named Entity Recognition is a natural language processing (NLP) task that aims to identify and classify named entities within a body of text into predefined categories such as the names of persons, organizations, locations, expressions of times, quantities, monetary values, percentages, etc.
+
+                    For example, given the sentence: "Barack Obama served as the President of the United States from 2009 to 2017," a NER system would identify "Barack Obama" as a person entity, "President" as an organization entity, and "United States" as a geopolitical entity, among others.
+                    
+                    NER is a crucial component in various NLP applications including information retrieval, question answering, document summarization, and more. In this project, the Flask application likely uses an API for NER to process user input text and extract relevant named entities for display or further processing.
+                    
+                    Overall, the project aims to provide a comprehensive web application with user authentication features along with the additional functionality of Named Entity Recognition to analyze and extract structured information from unstructured text data.</p>
+         
+            </div>
+        </div>
+        
+
+        
+    </div>
+    
+
+
+</body>
+
+</html>

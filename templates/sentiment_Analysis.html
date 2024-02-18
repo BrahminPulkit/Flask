@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Analysis</title>
+    <link rel="stylesheet" href="static/css/ner-styles.css">
+</head>
+<body>
+
+  <div class="container">
+      <form action="/perform_sentiment_Analysis" method="POST" class="form">
+          <label for="sentiment_Analysis_text" class="label">Type your text here</label><br>
+          <textarea name="sentiment_Analysis_text" id="sentiment_Analysis_text" cols="30" rows="10" class="textarea" placeholder="Enter your text here"></textarea><br>
+          <input type="submit" value="Analysis" class="submit-button">
+      </form>
+
+      <div class="response">
+          {% if response %}
+              {% for i in response['entities'] %}
+                  <p class="response-text">{{ i['name'] + " ==> " + i['category'] }}</p>
+              {% endfor %}
+          {% endif %}
+      </div>
+  </div>
+
+</body>
+</html>

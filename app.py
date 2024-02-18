@@ -92,6 +92,34 @@ def perform_ner():
         return redirect('/')
     
 
+@app.route('/sentiment_Analysis')
+def sentiment_Analysis():
+    if session.get('logged_in'):
+        return render_template('sentiment_Analysis.html')
+    else:
+        return redirect('/')
+    
+@app.route('/perform_sentiment_Analysis', methods=['POST'])
+def perform_sentiment_Analysis():
+    if session.get('logged_in'):
+        text = request.form.get('sentiment_Analysis_text')
+        try:
+            response = api.sentiment_Analysis(text)
+            return render_template('sentiment_Analysis.html', response=response)
+        except Exception as e:
+            return render_template('sentiment_Analysis.html', message='An error occurred while performing sentiment_Analysis')
+    else:
+        return redirect('/')
+    
+
+    
+
+
+@app.route('/about')
+def about():
+    return render_template('about.html')
+    
+
 
 if __name__ == '__main__':
     app.run(debug=True)

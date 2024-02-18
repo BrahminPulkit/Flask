@@ -1,0 +1,65 @@
+/* Reset default margin, padding, and box-sizing for all elements */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set font family, background color, and text color for the body */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+/* Container to hold the cards */
+.container {
+    max-width: 1200px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Style for individual cards */
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+    padding: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition effect for transform and box-shadow */
+}
+
+/* Hover effect for cards */
+.card:hover {
+    transform: translateY(-5px); /* Move card slightly upwards on hover */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Increase box shadow on hover for a lifted effect */
+}
+
+/* Style for card headers */
+.card h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+/* Style for card paragraphs */
+.card p {
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+/* Alternate background colors for cards */
+.card:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.card:nth-child(even) {
+    background-color: #e9e9e9;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Display cards in a single column on smaller screens */
+    }
+}

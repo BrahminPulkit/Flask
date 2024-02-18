@@ -19,8 +19,8 @@ body {
 
 /* Header styles */
 header {
-    background-color: #405de6; /* Blue */
-    color: #fff; /* White */
+    background-color: #333; /* Blue */
+    color: #f0f0f0; /* White */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     padding: 20px 0;
 }
@@ -56,7 +56,7 @@ input[type="submit"] {
     width: calc(100% - 40px);
     padding: 10px;
     margin: 10px auto;
-    background-color: #405de6; /* Blue */
+    background-color: #f0a500; /* Blue */
     border: none;
     border-radius: 5px;
     color: #fff; /* White */
@@ -65,7 +65,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background-color: #3f51b5; /* Slightly darker blue */
+    background-color: #d17d00; /* Slightly darker blue */
 }
 
 /* Footer styles */
