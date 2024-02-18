@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NLP | Register</title>
+    <link rel="stylesheet" href="static/css/register-styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="header-container">
+            <h1 class="display-4 fw-bold">Registration</h1>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <form action="perform_registration" method="post">
+            <div class="input-group">
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="input-group">
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label><br>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <input type="submit" value="Register">
+        </form>
+        <p>Already have an account? <a href="/">Login Here</a></p>
+    </div>
+
+    {% if message %}
+    <div id="notification-box" class="notification-box">
+        <p class="notification">{{ message }}</p>
+        <span class="close-btn" onclick="closeNotification()">×</span>
+    </div>
+    {% endif %}
+
+    <script>
+        function closeNotification() {
+            document.getElementById('notification-box').style.display = 'none';
+        }
+    </script>
+</body>
+
+</html>
