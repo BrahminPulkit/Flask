@@ -1,9 +1,9 @@
 function validateLoginForm() {
-    var email = document.getElementById('email').value;
-    var password = document.getElementById('password').value;
+    var email = document.getElementById('email');
+    var password = document.getElementById('password');
 
-    if (email.trim() === '' || password.trim() === '') {
-        alert('Please enter both email and password.');
+    if (!email || !password || email.value.trim() === '' || password.value.trim() === '') {
+        displayErrorMessage('Please enter both email and password.');
         return false;
     }
 
@@ -12,23 +12,15 @@ function validateLoginForm() {
 
 function togglePasswordVisibility() {
     var passwordInput = document.getElementById('password');
-    if (passwordInput.type === 'password') {
-        passwordInput.type = 'text';
-    } else {
-        passwordInput.type = 'password';
+    if (passwordInput) {
+        passwordInput.type = (passwordInput.type === 'password') ? 'text' : 'password';
     }
 }
 
 function displayErrorMessage(message) {
     var errorMessageElement = document.getElementById('error-message');
-    errorMessageElement.innerText = message;
-    errorMessageElement.style.display = 'block';
+    if (errorMessageElement) {
+        errorMessageElement.innerText = message;
+        errorMessageElement.style.display = 'block';
+    }
 }
-
-// In HTML: <div id="error-message" style="display: none;"></div>
-
-
-// In HTML: <button onclick="togglePasswordVisibility()">Show/Hide Password</button>
-
-
-// In HTML: <form onsubmit="return validateLoginForm()">
