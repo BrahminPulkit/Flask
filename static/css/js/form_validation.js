@@ -24,3 +24,5 @@ function displayErrorMessage(message) {
         errorMessageElement.style.display = 'block';
     }
 }
+
+

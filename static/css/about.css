@@ -39,7 +39,7 @@ hr {
     border-radius: 20px;
 }
 
-hr:before { /* Not really supposed to work, but does */
+hr:before { 
     display: block;
     content: "";
     height: 30px;

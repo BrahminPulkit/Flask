@@ -63,7 +63,6 @@
     border-radius: 5px;
 }
 
-/* Button styles */
 .btn-orange {
     background-color: var(--accent-color);
     border-color: var(--accent-color);
@@ -74,13 +73,12 @@
     border-color: var(--accent-color-dark);
 }
 
-/* Notification styles */
 #notification-box {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: #f0f0f0; /* Change to a light gray color */
+    background-color: #f0f0f0; 
     border: 1px solid #000;
     border-radius: 5px;
     padding: 10px 40px 10px 10px;
@@ -115,5 +113,5 @@ a {
 }
 
 a:hover {
-    color: var(--accent-color-dark); /* Darker shade of yellow on hover */
+    color: var(--accent-color-dark); 
 }

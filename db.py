@@ -46,3 +46,4 @@ class Database:
             print("Error updating password:", e)
             return 0  # Error occurred during password update
 
+

@@ -10,7 +10,7 @@ body {
 .container {
     max-width: 500px;
     margin: 50px auto;
-    background-color: #f9f9f9; /* Lighter grey */
+    background-color: #f9f9f9; 
     border: 1px solid #ccc; /* Light grey */
     border-radius: 5px;
     padding: 30px;
