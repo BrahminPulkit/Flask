@@ -10,55 +10,164 @@
 </head>
 
 <body>
-    <header>
-        <div class="header-container">
-            <h1 class="display-4 fw-bold">Welcome to NLP</h1>
-            <nav>
-                <ul class="nav">
-                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">GitHub</a></li>
-                    <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
-                </ul>
-            </nav>
+    <header class="header-section">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">NLP</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page"href="/about">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="jumbotron jumbotron-fluid bg-orange text-white text-center">
+            <div class="container">
+                <h1 >Welcome to NLP</h1>
+                <p class="lead">Natural Language Processing Made Easy</p>
+            </div>
         </div>
     </header>
+    
+    
 
-    <div class="container">
-        <form action="perform_login" method="post">
-            <div class="form-group">
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" placeholder="Email" required>
+    <main class="main-section">
+        <div class="container">
+            <div class="row justify-content-center mt-5">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-header bg-dark text-white">
+                            <h3 class="text-center">Login</h3>
+                        </div>
+                        <div class="card-body bg-gray">
+                            <form id="loginForm" action="perform_login" method="post" novalidate>
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">Email:</label>
+                                    <input type="email" class="form-control" id="loginEmail" name="email" placeholder="Email" required>
+                                    <div class="invalid-feedback">Please enter a valid email address.</div>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">Password:</label>
+                                    <input type="password" class="form-control" id="loginPassword" name="password" placeholder="Password" required>
+                                    <div class="invalid-feedback">Please enter your password.</div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label class="form-check-label" for="rememberMe">Remember me</label>
+                                </div>
+                                <button type="submit" class="btn btn-warning w-100">Login</button>
+                            </form>
+                            <div class="text-center mt-3">
+                                <p><a href="#" data-bs-toggle="modal" data-bs-target="#forgotPasswordModal" class="btn btn-link">Forgot your password?</a></p>
+                                <p>Don't have an account? <a href="#" data-bs-toggle="modal" data-bs-target="#registrationModal" class="btn btn-link">Register here</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-            </div>
-            <button type="submit" class="btn btn-primary">Login</button>
-            <div class="divider mt-3">
-                <span class="line"></span>
-                <span class="or">OR</span>
-                <span class="line"></span>
-            </div>
-        </form>
+        </div>
+    </main>
+    
 
-        <div class="forgot-password">
-            <p><a href="/forgot_password">Forgot Password?</a></p>
+    <!-- Registration Modal -->
+    <div class="modal fade" id="registrationModal" tabindex="-1" aria-labelledby="registrationModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="registrationModalLabel">Registration</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="registrationForm" action="perform_registration" method="post" novalidate>
+                        <div class="mb-3">
+                            <label for="registrationName" class="form-label">Name:</label>
+                            <input type="text" class="form-control" id="registrationName" name="username" placeholder="Name" required>
+                            <div class="invalid-feedback">Please enter your name.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registrationEmail" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="registrationEmail" name="email" placeholder="Email" required>
+                            <div class="invalid-feedback">Please enter a valid email address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="registrationPassword" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="registrationPassword" name="password" placeholder="Password" required>
+                            <div class="invalid-feedback">Please enter a password.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Register</button>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
 
-    <div class="footer">
-        <p>Don't have an account? <a href="/register">Register here</a></p>
+    <!-- Forgot Password Modal -->
+    <div class="modal fade" id="forgotPasswordModal" tabindex="-1" aria-labelledby="forgotPasswordModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header bg-primary text-white">
+                    <h5 class="modal-title" id="forgotPasswordModalLabel">Forgot Password?</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="forgotPasswordForm" action="/reset_password" method="post" novalidate>
+                        <div class="mb-3">
+                            <label for="forgotPasswordEmail" class="form-label">Email:</label>
+                            <input type="email" class="form-control" id="forgotPasswordEmail" name="email" placeholder="Email" required>
+                            <div class="invalid-feedback">Please enter your email address.</div>
+                        </div>
+                        <div class="mb-3">
+                            <label for="forgotPassword" class="form-label">Password:</label>
+                            <input type="password" class="form-control" id="forgotPasswordPassword" name="new_password" placeholder="New Password" required>
+                            <div class="invalid-feedback">Please enter a password.</div>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100">Reset Password</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 
-    {% if message %}
-    <div class="notification-box">
-        <p class="notification">{{ message }}</p>
-    </div>
-    {% endif %}
+    <footer>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6">
+                    <div id="notification-box" class="alert alert-dark alert-dismissible fade show" role="alert">
+                        <ul>
+                            {% for message in messages %}
+                            <li>{{ message }}</li>
+                            {% endfor %}
+                        </ul>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        {% endwith %}
+    </footer>
+    
+    
+    
+    
+    
+    
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="static/css/js/form_validation.js"></script>
-     <!-- Adjust the path as per your project structure -->
 </body>
 
 </html>

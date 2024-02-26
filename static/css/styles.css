@@ -1,166 +1,96 @@
-/* Global styles */
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* Light grey */
-    color: #333; /* Dark grey */
-    margin: 0;
-    padding: 0;
+
+:root {
+    --primary-color: #495057; 
+    --secondary-color: #000000; /* Black */
+    --accent-color: #FFC107; /* Yellow */
+    --accent-color-dark: #FFA000; 
+    --accent-color-light: #FFE082; 
+    --notification-color: #FF5722; 
 }
 
-.container {
-    max-width: 400px;
-    margin: 50px auto;
-    padding: 20px;
+/* Header styles */
+.navbar {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link {
+    font-weight: bold;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #0d6ecf; /* Change the color on hover */
+}
+
+.jumbotron {
+    background-color: var(--primary-color);
+    color: rgb(170, 160, 44);
+    text-align: center;
+
+}
+
+.jumbotron h1 {
+    color: var(--accent-color-light); /* Use light accent color */
+    font-family: 'Arial', sans-serif;
+    font-size: 2.5rem; /* Adjust font size as needed */
+    text-align: center;
+    text-shadow: 
+        2px 2px 2px rgba(244, 180, 0, 0.4), 
+        4px 4px 4px rgba(244, 180, 0, 0.3), 
+        6px 6px 6px rgba(244, 180, 0, 0.2); 
+    margin-bottom: 10px; 
+}
+
+.jumbotron p {
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.2em;
+}
+
+/* Card styles */
+.card-header.bg-primary {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.card-body {
     background-color: #f9f9f9;
     border: 1px solid #ccc;
     border-radius: 5px;
 }
 
-/* Header styles */
-header {
-    background-color: #333; /* Blue */
-    color: #f0f0f0; /* White */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    padding: 25px 0;
+/* Button styles */
+.btn-orange {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
-.header-container {
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.header-container h1 {
-    margin: 0;
-    font-size: 24px;
-}
-
-nav ul {
-    position: relative;
-    display: flex;
-    width: 350px;
-}
-
-nav ul li {
-    position: relative;
-    list-style: none;
-    display: inline;
-    margin-left: 20px;
-    z-index: 1;
-}
-
-nav ul li a {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    color: #fff; /* White */
-    align-items: center;
-    text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #fd7e14; /* Orange */
-}
-
-/* Form styles */
-.form-group {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-}
-
-.container input[type="text"],
-.container input[type="email"],
-.container input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px auto;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    box-sizing: border-box;
-    color: #333;
-    background-color: #f0f0f0; /* Light grey */
-}
-
-button[type="submit"] {
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    background-color: #f0a500;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-button[type="submit"]:hover {
-    background-color: #d17d00; /* Slightly darker blue */
-}
-
-.container p {
-    margin-top: 20px;
-    font-size: 14px;
-    text-align: center;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    margin-bottom: 20px;
-}
-
-.divider .line {
-    flex: 1;
-    height: 1px;
-    background-color: #ccc; /* Light grey */
-}
-
-.divider .or {
-    margin: 0 10px;
-    color: #999; /* Dark grey */
-}
-
-/* Footer styles */
-.footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-.footer a {
-    color: #405de6; /* Blue */
-    text-decoration: none;
-}
-
-.footer a:hover {
-    text-decoration: underline;
+.btn-orange:hover {
+    background-color: var(--accent-color-dark);
+    border-color: var(--accent-color-dark);
 }
 
 /* Notification styles */
-.notification-box {
+#notification-box {
     position: fixed;
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(255, 0, 0, 0.8); /* Red with opacity */
-    border: 1px solid #ff0000; /* Red */
+    background-color: #f0f0f0; /* Change to a light gray color */
+    border: 1px solid #000;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 40px 10px 10px;
     animation: slideIn 0.5s ease forwards; /* Animation to slide in */
 }
 
+
 .notification {
     margin: 0;
-    color: #fff; /* White */
+    color: #FFEB3B; /* Yellow */
     font-weight: bold;
     text-align: center;
     font-size: 16px;
@@ -178,14 +108,12 @@ button[type="submit"]:hover {
     }
 }
 
-/* Header link styles */
-.nav-link {
-    color: #fff; /* White */
+/* Anchor styles */
+a {
+    color: var(--primary-color);
     text-decoration: none;
-    font-size: 16px;
-    transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #fd7e14; /* Orange on hover */
+a:hover {
+    color: var(--accent-color-dark); /* Darker shade of yellow on hover */
 }

@@ -1,4 +1,5 @@
-from flask import Flask, render_template, request, redirect, session
+from flask import Flask, render_template, request, redirect, session,flash
+
 from db import Database
 import api
 
@@ -19,21 +20,26 @@ def register():
 def forgot_password():
     return render_template('forgot_password.html')
 
+
 @app.route('/reset_password', methods=['POST'])
 def reset_password():
     if request.method == 'POST':
         email = request.form.get('email')
         new_password = request.form.get('new_password')
         try:
-            response = dbo.update_password(email, new_password)
-            if response:
-                return render_template("forgot_password.html", message="Password updated successfully. You can now log in.")
+            # Call the update_password method from the Database instance
+            if dbo.update_password(email, new_password):
+                flash("Password updated successfully. You can now log in.")
+                return redirect("/")
             else:
-                return render_template("forgot_password.html", message="Failed to update password. Please try again later.")
+                flash("Failed to update password. Please try again later.")
+                return render_template("login.html")
             
         except Exception as e:
             print("Error:", e)
-            return render_template('forgot_password.html', message="An error occurred. Please try again later.")
+            flash("An error occurred. Please try again later.")
+            return render_template('login.html')
+
 
 @app.route('/perform_registration', methods=['POST'])
 def perform_registration():
@@ -44,11 +50,15 @@ def perform_registration():
     try:
         response = dbo.insert(name, email, password)
         if response:
-            return redirect('/login')  
+            flash("Registration successful! You can now log in.")
+            return redirect('/')  # Redirect to the home page after registration
         else:
-            return render_template('register.html', message="Email already exists")
+            flash("Email already exists")
+            return render_template('login.html')
     except Exception as e:
-        return render_template('register.html', message="An error occurred while registering")
+        flash("An error occurred while registering")
+        return render_template('login.html')
+
 
 @app.route('/perform_login', methods=['POST'])
 def perform_login():
@@ -111,9 +121,6 @@ def perform_sentiment_Analysis():
     else:
         return redirect('/')
     
-
-    
-
 
 @app.route('/about')
 def about():
